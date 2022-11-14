@@ -6,13 +6,15 @@ package vehiculos;
 
 /**
  *
- * 2. es un molde donde vamos a indicar los atributos y metodos de los 
+ * b. es un molde donde vamos a indicar los atributos y metodos de los 
  * objetos que queremos modelar
- * 3. es una variable de tipo referencia que contiene los datos de una
+ * c. es una variable de tipo referencia que contiene los datos de una
  * instancia de una clase. la instancia es
- * 4. 
- * 5.
- * 6. definicion atributos y metodos
+ * d. 
+ * e.
+ * f. definicion atributos y metodos
+ * k. crear un espacio de memoria donde 
+ * l. ejecutar el programa
  * 
  * @author noelia
  */

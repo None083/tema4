@@ -55,6 +55,8 @@ public class CajaCarton {
         this.peso = peso;
     }
     
+    //si se pone static solo se podria usar con la clase cajacarton
+    //y no con cajachica o cajagrande
     public void abrir(){
         
     }
