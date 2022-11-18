@@ -19,37 +19,34 @@ import org.apache.commons.lang3.RandomStringUtils;
  * --constructor parametrizado. nº cuenta aleatorio
  * --getter y setter. no hay set para el nº cuenta
  * --to string
- * 
- * calculos cuenta:
- * -metodos:
- * --ingresar intereses (cuenta cuenta) aumenta el saldo de la cuenta. saldo=saldo+saldo*interes
- * --ingresar dinero (cuenta cuenta, double cantidad)
- * --retirar efectivo (cuenta cuenta, double cantidad) hay que tener en cuenta 
- * que no se puede sacar mas de lo que hay
- * 
- * clase main:
- * creamos un par de objetos y probamos los metodos de CALCULOS CUENTA
- *
+
  * @author noelia
  */
 public class ClaseCuenta {
     
-    String numeroCuenta;
-    String NIF;
-    String nombre;
-    int saldoActual;
-    double interes;
+    private String numeroCuenta;
+    private String NIF;
+    private String nombre;
+    private double saldoActual;
+    private double interes;
 
     public ClaseCuenta() {
         this.numeroCuenta = numeroCuenta();
     }
 
-    public ClaseCuenta(String numeroCuenta, String NIF, String nombre, int saldoActual, double interes) {
+    public ClaseCuenta(String NIF, String nombre, double saldoActual, double interes) {
         this.numeroCuenta = numeroCuenta();
         this.NIF = NIF;
         this.nombre = nombre;
         this.saldoActual = saldoActual;
-        this.interes = interes;
+        if (interes < 0.1){
+            this.interes = 0.1;
+        } else if (interes > 3){
+            this.interes = 3;
+        } else {
+            this.interes = interes;
+        }
+        
     }
 
     public String getNumeroCuenta() {
@@ -64,7 +61,7 @@ public class ClaseCuenta {
         return nombre;
     }
 
-    public int getSaldoActual() {
+    public double getSaldoActual() {
         return saldoActual;
     }
 
@@ -72,9 +69,23 @@ public class ClaseCuenta {
         return interes;
     }
 
-    public void setNumeroCuenta(String numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
+    public void setInteres(double interes) {
+        this.interes = interes;
     }
+
+    public void setNIF(String NIF) {
+        this.NIF = NIF;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setSaldoActual(double saldoActual) {
+        this.saldoActual = saldoActual;
+    }
+    
+    
 
     @Override
     public String toString() {
@@ -86,7 +97,7 @@ public class ClaseCuenta {
         for (int i = 0; i < 10; i++) {
             numero = RandomStringUtils.randomNumeric(20);
         }
-        return numero;
+        return numero; 
     }
     
 }
