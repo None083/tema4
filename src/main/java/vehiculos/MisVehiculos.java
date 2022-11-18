@@ -29,6 +29,7 @@ public class MisVehiculos {
         ferrari.color = "Rosa chicle";
         ferrari.modelo = "testarrosa";
         ferrari.marca = "Ferrari";
+        
         System.out.println("Color del ferrari " + ferrari.color);
         
         //instanciamos una variable vehiculo 
@@ -45,6 +46,22 @@ public class MisVehiculos {
         
         System.out.println(mercedes.toString());//tambien se puede no poner el .toSrting
         
+        
+        Vehiculo copiaMercedes = new Vehiculo(mercedes);
+        System.out.println("-----------------------");
+        System.out.println(mercedes);
+        System.out.println(copiaMercedes);
+        
+        
+        
+        
     }
+    
+    public void recibirVehiculo (Vehiculo aux){
+        aux.setDisponible(true);
+    }
+    
+    
+    
     
 }

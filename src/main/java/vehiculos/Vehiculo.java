@@ -76,9 +76,39 @@ public class Vehiculo {
                 ", marca=" + marca + ", modelo=" + modelo + ", color=" + color + 
                 ", tarifa=" + tarifa + ", disponible=" + disponible + '}';
     }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
     
+    //constructor copia
+    public Vehiculo(Vehiculo origen){
+        this.bastidor = origen.bastidor;
+        this.color = origen.bastidor;
+        this.disponible = origen.disponible;
+        this.marca = origen.marca;
+        this.matricula = origen.matricula;
+        this.modelo = origen.modelo;
+        this.tarifa = origen.tarifa;
+             
+    }
     
+    public Vehiculo copiar(){
+        Vehiculo aux = new Vehiculo(matricula, bastidor, marca, 
+                modelo, color, tarifa, disponible);
+        return aux;
+    }
     
+    public static Vehiculo copiar(Vehiculo origen){
+        Vehiculo aux = new Vehiculo(origen.matricula, origen.bastidor, 
+                origen.marca, origen.modelo, origen.color, origen.tarifa,
+                origen.disponible);
+        return aux;
+    }
 
     /**
      * 
