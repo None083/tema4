@@ -84,8 +84,7 @@ public class ClaseCuenta {
     public void setSaldoActual(double saldoActual) {
         this.saldoActual = saldoActual;
     }
-    
-    
+       
 
     @Override
     public String toString() {
