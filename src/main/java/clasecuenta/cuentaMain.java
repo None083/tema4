@@ -16,15 +16,15 @@ public class cuentaMain {
      *
      */
     public static void main(String[] args) {
-        
+
         ClaseCuenta currupepa = new ClaseCuenta("09438979L", "Currupepa", 0.23, 6);
         ClaseCuenta rogelia = new ClaseCuenta("09784515H", "Rogelia", 8000, 2);
-        
+
         System.out.println("Cuenta de Currupepa: " + currupepa);
         CalculosCuenta.ingresarIntereses(currupepa);
         CalculosCuenta.retirarSaldo(currupepa, 5);
         System.out.println("Actualización de la cuenta de Currupepa: " + currupepa);
-        
+
         System.out.println("Cuenta de Rogelia: " + rogelia);
         CalculosCuenta.ingresarIntereses(rogelia);
         CalculosCuenta.ingresarSaldo(rogelia, 1000);

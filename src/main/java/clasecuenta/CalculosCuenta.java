@@ -28,12 +28,13 @@ public class CalculosCuenta {
         
     }
     
-    public static void retirarSaldo(ClaseCuenta cuenta, double cantidad){
+    public static boolean retirarSaldo(ClaseCuenta cuenta, double cantidad){
         
         if(cantidad > cuenta.getSaldoActual()){
-            System.out.println("Ha sobrepasado la cantidad permitida");
+            return false;
         } else{
             cuenta.setSaldoActual(cuenta.getSaldoActual() - cantidad);
+            return true;
         }
         
     }
