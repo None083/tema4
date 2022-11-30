@@ -19,10 +19,16 @@ public class MisSeries {
         System.out.println(simpsons);
         
         Serie house = new Serie();
+        Serie simpson2 = ServicioSerie.copiar(simpsons);
+        System.out.println("Hashcode simpson " + simpsons.hashCode());
+        System.out.println("Hashcode simpson2 " + simpson2.hashCode());
+        System.out.println("Son iguales Los Simpsons a House?" + simpsons.equals(house));
+        System.out.println("Es igual simpson y simpson2?" + simpsons.equals(simpson2));
         System.out.println(house);
         
         Serie prisonBreak = new Serie("Prison Break", "Acción", "...", "AMC", 5, 120000);
         System.out.println(prisonBreak);
+        System.out.println("Hashcode Prison break " + prisonBreak.hashCode());
         
         Serie peakyBlinders = ServicioSerie.leerTecladoSerie();
         System.out.println(peakyBlinders);
@@ -32,6 +38,9 @@ public class MisSeries {
         ServicioSerie.darLike(peakyBlinders);
         System.out.println(peakyBlinders);
         
+        
+        
     }
+    
     
 }

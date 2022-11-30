@@ -4,6 +4,8 @@
  */
 package series;
 
+import java.util.Objects;
+
 /**
  * Título, género (accion, comedia, sci-fi, drama), sinopsis, num temporadas, 
  * productor
@@ -100,8 +102,48 @@ public class Serie {
         this.numeroLikes++;    
     }
 
-   
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.titulo);
+        hash = 97 * hash + Objects.hashCode(this.genero);
+        hash = 97 * hash + Objects.hashCode(this.sinopsis);
+        hash = 97 * hash + Objects.hashCode(this.productor);
+        hash = 97 * hash + this.numeroTemporadas;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final Serie other = (Serie) obj;
+        
+        if (this.numeroTemporadas != other.numeroTemporadas) {
+            return false;
+        }
+        if (!Objects.equals(this.titulo, other.titulo)) {
+            return false;
+        }
+        if (!Objects.equals(this.genero, other.genero)) {
+            return false;
+        }
+        if (!Objects.equals(this.sinopsis, other.sinopsis)) {
+            return false;
+        }
+        return Objects.equals(this.productor, other.productor);
+    }
     
-    
+    public int getLikes(){
+        return numeroLikes;
+    }
     
 }

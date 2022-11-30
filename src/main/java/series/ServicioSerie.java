@@ -50,4 +50,11 @@ public class ServicioSerie {
         }
     }
     
+    public static Serie copiar( Serie origen){
+        Serie aux = new Serie(origen.getTitulo(), origen.getGenero(),
+                origen.getSinopsis(), origen.getProductor(), 
+                origen.getNumeroTemporadas(), origen.getLikes());
+        return aux;
+    }
+    
 }
