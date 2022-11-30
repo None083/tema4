@@ -4,6 +4,8 @@
  */
 package vehiculos;
 
+import java.util.Objects;
+
 /**
  *
  * b. es un molde donde vamos a indicar los atributos y metodos de los 
@@ -110,15 +112,44 @@ public class Vehiculo {
         return aux;
     }
 
-    /**
-     * 
-     * 
-     */
-    public static void main(String[] args) {
-        
-        
-        
-        
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.matricula);
+        hash = 47 * hash + Objects.hashCode(this.bastidor);
+        hash = 47 * hash + Objects.hashCode(this.marca);
+        hash = 47 * hash + Objects.hashCode(this.modelo);
+        hash = 47 * hash + Objects.hashCode(this.color);
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Vehiculo other = (Vehiculo) obj;
+        if (!Objects.equals(this.matricula, other.matricula)) {
+            return false;
+        }
+        if (!Objects.equals(this.bastidor, other.bastidor)) {
+            return false;
+        }
+        if (!Objects.equals(this.marca, other.marca)) {
+            return false;
+        }
+        if (!Objects.equals(this.modelo, other.modelo)) {
+            return false;
+        }
+        return Objects.equals(this.color, other.color);
+    }
+    
+    
     
 }
